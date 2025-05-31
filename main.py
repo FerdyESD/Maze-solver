@@ -66,9 +66,10 @@ def main():
     # test_cell2.draw_move(test_cell5)
     # test_cell3.draw_move(test_cell4)
 
-    the_maze = Maze(50, 50, 10, 5, 20, 20, win)
-
+    the_maze = Maze(50, 50, 20, 20, 20, 20, win)
+    the_maze.solve()
     win.wait_for_close()
+    
 
 
 main()

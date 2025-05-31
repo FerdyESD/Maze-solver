@@ -1,5 +1,8 @@
 import unittest
 from classes.maze import Maze
+import sys
+sys.setrecursionlimit(15000)
+
 
 class Tests(unittest.TestCase):
     def test_maze_create_cells(self):
@@ -59,6 +62,19 @@ class Tests(unittest.TestCase):
         )
         self.assertEqual(
             m1._Maze__cells[num_cols - 1][num_rows - 1].has_bottom_wall,
+            False
+        )
+
+    def check_visited_reset(self):
+        num_cols = 5
+        num_rows = 5
+        m1 = Maze(0, 0, num_rows, num_cols, 10, 10)
+        self.assertEqual(
+            m1._Maze__cells[0][0].visited,
+            False
+        )
+        self.assertEqual(
+            m1._Maze__cells[3][3].visited,
             False
         )
 
